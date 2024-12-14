@@ -1,0 +1,66 @@
+.crispy-button {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  outline: none;
+  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 6px 12px;
+  border-radius: 3px;
+
+  &__label {
+    line-height: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 2%;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    transition: all 0.2s ease;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+  }
+
+  &--primary {
+    background-color: #2563eb;
+    color: white;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:active {
+      background-color: #053AA8;
+      transform: translateY(1px);
+    }
+  }
+
+  &--secondary {
+    background-color: #CF971F;
+    color: white;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:active {
+      background-color: #9C6F14;
+      transform: translateY(1px);
+    }
+  }
+}
