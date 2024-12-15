@@ -1,0 +1,40 @@
+.crispy-textfield {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  isolation: isolate;
+  flex: none;
+
+  &__input {
+    border: 1px solid #1F58CF;
+    background-color: #E4EAFF;
+    border-radius: 3px;
+    color: #000000;
+    line-height: 18.75px;
+    font-size: 15px;
+    width: 200px;
+    height: 30px;
+    padding: 0 6px;
+    text-overflow: ellipsis;
+  }
+
+  &--secondary &__input {
+    border: 1px solid #CF9D1F;
+    background-color: #FFF9E3;
+  }
+
+  &__label {
+    color: #2D2D2D;
+    line-height: 17.5px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+}
