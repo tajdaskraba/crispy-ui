@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import Icon from '../Icon/Icon';
 import './Button.scss';
-import { ComponentVariant } from '../types';
+import { ButtonVariant } from '../types';
 
 const VARIANT_ICON_MAP = {
   primary: Icon.PaperPlane,
@@ -11,10 +11,10 @@ const VARIANT_ICON_MAP = {
 
 export interface ButtonProps {
   label: string;
-  variant?: ComponentVariant;
-  icon?: React.ReactNode;
+  variant?: ButtonVariant;
   rightIcon?: React.ReactNode;
   className?: string;
+  onClick: () => void;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -22,6 +22,7 @@ const Button: React.FC<ButtonProps> = ({
   variant = 'primary',
   rightIcon,
   className,
+  onClick,
   ...props
 }) => {
   const baseClass = 'crispy-button';
@@ -30,7 +31,8 @@ const Button: React.FC<ButtonProps> = ({
   const variantIcon = IconComponent ? <IconComponent /> : null;
 
   return (
-    <button 
+    <button
+      onClick={onClick}
       className={classNames(baseClass, `${baseClass}--${variant}`, className)} 
       {...props}
     >
