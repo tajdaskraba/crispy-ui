@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from './components/Button/Button';
 import TextField from './components/TextField/TextField';
-import { containsNumbers } from './components/helpers';
+import { containsNumbers, validateInput } from './components/helpers';
 
 const App: React.FC = () => {
   const [value, setValue] = useState('');
@@ -10,14 +10,13 @@ const App: React.FC = () => {
   const [popupContent, setPopupContent] = useState('');
 
   const handleValidation = () => {
-    if (containsNumbers(value)) {
-      setIsError(true);
-      setShowPopup(false);
-    } else {
-      setIsError(false);
-      setPopupContent(value);
-      setShowPopup(true);
-
+    const validationResult = validateInput(value, containsNumbers);
+    
+    setIsError(validationResult.hasError);
+    setShowPopup(validationResult.isValid);
+    
+    if (validationResult.isValid) {
+      setPopupContent(validationResult.message);
       setTimeout(() => {
         setShowPopup(false);
       }, 3000);

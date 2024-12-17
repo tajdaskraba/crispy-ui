@@ -1,3 +1,5 @@
+@use '../../styles/colors' as *;
+
 .crispy-button {
   border: none;
   background: none;
@@ -38,29 +40,29 @@
   }
 
   &--primary {
-    background-color: #2563eb;
-    color: white;
+    background-color: $blue-200;
+    color: $white;
 
     &:hover {
       cursor: pointer;
     }
 
     &:active {
-      background-color: #053AA8;
+      background-color: $blue-300;
       transform: translateY(1px);
     }
   }
 
   &--secondary {
-    background-color: #CF971F;
-    color: white;
+    background-color: $orange-200;
+    color: $white;
 
     &:hover {
       cursor: pointer;
     }
 
     &:active {
-      background-color: #9C6F14;
+      background-color: $orange-300;
       transform: translateY(1px);
     }
   }

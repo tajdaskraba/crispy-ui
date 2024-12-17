@@ -23,7 +23,6 @@ const TextField: React.FC<TextFieldProps> = ({
   ...props
 }) => {
   const baseClass = 'crispy-textfield';
-
   const [value, setValue] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
