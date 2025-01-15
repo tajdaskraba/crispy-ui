@@ -13,7 +13,7 @@ const meta: Meta<typeof TextField> = {
       description: 'Label text displayed above the input',
     },
     variant: {
-      control: 'select', 
+      control: 'select',
       options: ['primary', 'secondary', 'error'],
       description: 'Visual style variant of the text field',
     },
@@ -37,7 +37,8 @@ const meta: Meta<typeof TextField> = {
   parameters: {
     docs: {
       description: {
-        component: 'Text input component that supports labels, validation, and three states - primary, secondary and error.',
+        component:
+          'Text input component that supports labels, validation, and three states - primary, secondary and error.',
       },
     },
   },
@@ -57,12 +58,13 @@ export const Primary: Story = {
 export const Secondary: Story = {
   args: {
     variant: 'secondary',
-    label: 'Favourite crispy snack'
-  }
-}
+    label: 'Favourite crispy snack',
+  },
+};
 
 export const Validation: Story = {
   render: () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [error, setError] = React.useState<string | undefined>();
 
     const handleChange = (value: string) => {

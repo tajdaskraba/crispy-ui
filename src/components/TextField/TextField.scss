@@ -35,6 +35,16 @@
     height: 30px;
     padding: 0 6px;
     text-overflow: ellipsis;
+
+    &__stretch {
+      width: 100%;
+      position: absolute;
+      align-items: stretch;
+    }
+
+    &__fixedWidth {
+      width: var(--fixed-width);
+    }
   }
 
   &--secondary &__input {

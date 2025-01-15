@@ -30,7 +30,8 @@ const meta: Meta<typeof Button> = {
   parameters: {
     docs: {
       description: {
-        component: 'Button component that supports different variants and automatically includes icons based on the variant.',
+        component:
+          'Button component that supports different variants and automatically includes icons based on the variant.',
       },
     },
   },
@@ -76,13 +77,7 @@ export const InteractiveExample: Story = {
       alert('Button clicked!');
     };
 
-    return (
-      <Button
-        label="Click"
-        variant="primary"
-        onClick={handleClick}
-      />
-    );
+    return <Button label="Click" variant="primary" onClick={handleClick} />;
   },
   parameters: {
     docs: {

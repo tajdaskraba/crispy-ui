@@ -8,7 +8,7 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "types": ["jest", "@testing-library/jest-dom"],
+    "types": ["jest", "@testing-library/jest-dom", "vite-plugin-svgr/client"],
     "resolveJsonModule": true,
     "strict": true,
     "jsx": "react-jsx"

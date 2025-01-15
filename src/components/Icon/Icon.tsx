@@ -1,18 +1,11 @@
-import React from 'react';
-import ArrowBack from '../../assets/svg/arrow-back.svg';
-import PaperPlane from '../../assets/svg/paper-plane.svg';
-import WarningSign from '../../assets/svg/warning-sign.svg';
-
-const createIconComponent = (IconComponent: string) => {
-  return ({ size = 16, ...props }) => (
-    <IconComponent {...props} />
-  );
-};
+import ArrowBack from '../Icons/ArrowBack';
+import PaperPlane from '../Icons/PaperPlane';
+import WarningSign from '../Icons/WarningSign';
 
 const Icon = {
-  ArrowBack: createIconComponent(ArrowBack),
-  PaperPlane: createIconComponent(PaperPlane),
-  WarningSign: createIconComponent(WarningSign),
+  PaperPlane,
+  ArrowBack,
+  WarningSign,
 };
 
 export default Icon;

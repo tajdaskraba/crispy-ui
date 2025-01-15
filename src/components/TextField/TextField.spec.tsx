@@ -5,8 +5,8 @@ import TextField from './TextField';
 jest.mock('../Icon/Icon', () => ({
   __esModule: true,
   default: {
-    WarningSign: () => <span data-testid="warning-icon" />
-  }
+    WarningSign: () => <span data-testid="warning-icon" />,
+  },
 }));
 
 describe('TextField', () => {
@@ -46,29 +46,31 @@ describe('TextField', () => {
     it('calls onChange handler with input value', () => {
       const handleChange = jest.fn();
       render(<TextField onChange={handleChange} />);
-      
-      fireEvent.change(screen.getByRole('textbox'), { target: { value: 'test' } });
+
+      fireEvent.change(screen.getByRole('textbox'), {
+        target: { value: 'test' },
+      });
       expect(handleChange).toHaveBeenCalledWith('test');
     });
 
     it('calls onEnterPress handler when Enter key is pressed', () => {
       const handleEnterPress = jest.fn();
       render(<TextField onEnterPress={handleEnterPress} />);
-      
+
       const input = screen.getByRole('textbox');
       fireEvent.change(input, { target: { value: 'test value' } });
       fireEvent.keyDown(input, { key: 'Enter' });
-      
+
       expect(handleEnterPress).toHaveBeenCalledWith('test value');
     });
 
     it('does not call onEnterPress handler for other keys', () => {
       const handleEnterPress = jest.fn();
       render(<TextField onEnterPress={handleEnterPress} />);
-      
+
       const input = screen.getByRole('textbox');
       fireEvent.keyDown(input, { key: 'Space' });
-      
+
       expect(handleEnterPress).not.toHaveBeenCalled();
     });
   });

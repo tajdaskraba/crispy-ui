@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from './components/Button/Button';
+import Icon from './components/Icon/Icon';
 import TextField from './components/TextField/TextField';
 import { containsNumbers, validateInput } from './components/helpers';
 
@@ -11,10 +12,10 @@ const App: React.FC = () => {
 
   const handleValidation = () => {
     const validationResult = validateInput(value, containsNumbers);
-    
+
     setIsError(validationResult.hasError);
     setShowPopup(validationResult.isValid);
-    
+
     if (validationResult.isValid) {
       setPopupContent(validationResult.message);
       setTimeout(() => {
@@ -37,7 +38,7 @@ const App: React.FC = () => {
       <div className="box__text-field">
         <TextField
           label="Text producer"
-          variant={isError ? 'error' : 'primary'}
+          variant={isError ? 'error' : 'secondary'}
           validationError={isError ? 'No numbers allowed!' : ''}
           onChange={(value) => {
             setValue(value);
@@ -53,8 +54,9 @@ const App: React.FC = () => {
       )}
       <Button
         label="Submit"
-        variant="primary"
+        variant="secondary"
         onClick={handleButtonClick}
+        rightIcon={<Icon.ArrowBack size={16} />}
       />
     </div>
   );

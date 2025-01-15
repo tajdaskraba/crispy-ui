@@ -6,8 +6,8 @@ jest.mock('../Icon/Icon', () => ({
   __esModule: true,
   default: {
     PaperPlane: () => <span data-testid="paper-plane-icon">paper-plane</span>,
-    ArrowBack: () => <span data-testid="arrow-back-icon">arrow-back</span>
-  }
+    ArrowBack: () => <span data-testid="arrow-back-icon">arrow-back</span>,
+  },
 }));
 
 describe('Button', () => {
@@ -29,7 +29,7 @@ describe('Button', () => {
   it('calls onClick handler when clicked', () => {
     const handleClick = jest.fn();
     render(<Button label="Test Button" onClick={handleClick} />);
-    
+
     fireEvent.click(screen.getByRole('button'));
     expect(handleClick).toHaveBeenCalledTimes(1);
   });

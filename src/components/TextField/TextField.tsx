@@ -12,7 +12,6 @@ interface TextFieldProps {
   onEnterPress?: (value: string) => void;
   onChange?: (value: string) => void;
 }
-
 const TextField: React.FC<TextFieldProps> = ({
   label,
   variant,
@@ -40,9 +39,13 @@ const TextField: React.FC<TextFieldProps> = ({
 
   return (
     <div
-      className={classNames(baseClass, {
-        [`${baseClass}--${variant}`]: variant,
-      }, className)}
+      className={classNames(
+        baseClass,
+        {
+          [`${baseClass}--${variant}`]: variant,
+        },
+        className
+      )}
     >
       {label && (
         <div className={`${baseClass}__label`}>
